@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appBar: {},
+  toolBar: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -39,7 +43,7 @@ export default function HeaderMenu(): React$Element<"div"> {
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
+        <Toolbar className={classes.toolBar}>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -58,6 +62,8 @@ export default function HeaderMenu(): React$Element<"div"> {
             <Tab label="About me" />
             <Tab label="Expercience" />
             <Tab label="Contact" />
+            <Tab label="Art" />
+            <Tab label="Shop" />
           </Tabs>
         </Toolbar>
       </AppBar>

@@ -1,6 +1,5 @@
 // @flow
 import * as React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/core";
 import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
 import PaperInfo from "./components/PaperInfo/PaperInfo";

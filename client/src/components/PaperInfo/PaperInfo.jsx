@@ -1,7 +1,6 @@
 // @flow
 import * as React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -22,7 +21,7 @@ export default function PaperInfo(): React$Element<"div"> {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         <Typography
           component="h1"
           variant="h2"
