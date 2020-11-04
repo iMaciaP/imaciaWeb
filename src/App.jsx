@@ -1,8 +1,8 @@
 // @flow
 import * as React from "react";
 import { ThemeProvider } from "@material-ui/core";
-import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
-import PaperInfo from "./components/PaperInfo/PaperInfo";
+
+import MainLayout from "./layouts/MainLayout/MainLayout";
 import theme from "./theme";
 import "./App.css";
 
@@ -10,8 +10,7 @@ const App = (): React$Element<React$FragmentType> => {
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
-        <HeaderMenu />
-        <PaperInfo />
+        <MainLayout />
       </ThemeProvider>
     </React.Fragment>
   );
