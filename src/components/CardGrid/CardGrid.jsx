@@ -25,37 +25,18 @@ const useStyles = makeStyles((theme) => ({
   cardroot: {},
 }));
 
-// TODO: temporary props
-const cardArr = [
-  {
-    title: "Web",
-    description:
-      " Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-  },
-  {
-    title: "Art",
-    description:
-      " Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-  },
-  {
-    title: "Games",
-    description:
-      " Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-  },
-];
-
 type Props = {};
 
-const PaperInfo = ({ ...props }: Props): React$Element<"div"> => {
+const SimpleInfo = ({ ...props }: Props): React$Element<"div"> => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Container maxWidth="md">
         <Grid container className={classes.grid} spacing={3}>
-          {map(cardArr, ({ title, description }) => {
+          {map(cardArr, ({ title, description }, index) => {
             return (
-              <Grid item xs={12} xl={4}>
+              <Grid key={index} item xs={12} xl={4}>
                 <Card className={classes.cardroot}>
                   <CardActionArea>
                     <CardMedia
@@ -91,4 +72,23 @@ const PaperInfo = ({ ...props }: Props): React$Element<"div"> => {
   );
 };
 
-export default PaperInfo;
+export default SimpleInfo;
+
+// TODO: temporary props
+const cardArr = [
+  {
+    title: "Web",
+    description:
+      " Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+  },
+  {
+    title: "Art",
+    description:
+      " Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+  },
+  {
+    title: "Games",
+    description:
+      " Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+  },
+];

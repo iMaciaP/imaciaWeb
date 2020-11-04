@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   toolBar: {
     display: "flex",
     flexWrap: "wrap",
+    justifyContent: "center",
   },
   tabsContainer: {
     [theme.breakpoints.down("sm")]: {

@@ -18,7 +18,7 @@ type Props = {
   subtitle: string,
 };
 
-const PaperInfo = ({
+const SimpleInfo = ({
   title,
   subtitle,
   ...props
@@ -45,4 +45,4 @@ const PaperInfo = ({
   );
 };
 
-export default PaperInfo;
+export default SimpleInfo;
