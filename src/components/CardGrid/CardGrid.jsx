@@ -17,7 +17,9 @@ import imageTexture from "../../statics/texture.jpg";
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(8, 0, 6),
+    backgroundColor: theme.palette.background.main,
   },
+  container: {},
   grid: {},
   media: {
     height: 140,
@@ -32,11 +34,11 @@ const SimpleInfo = ({ ...props }: Props): React$Element<"div"> => {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="md">
+      <Container maxWidth="md" className={classes.container}>
         <Grid container className={classes.grid} spacing={3}>
           {map(cardArr, ({ title, description }, index) => {
             return (
-              <Grid key={index} item xs={12} xl={4}>
+              <Grid key={index} item xs={12} lg={6}>
                 <Card className={classes.cardroot}>
                   <CardActionArea>
                     <CardMedia
@@ -78,17 +80,10 @@ export default SimpleInfo;
 const cardArr = [
   {
     title: "Web",
-    description:
-      " Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+    description: " Check out my coding examples",
   },
   {
-    title: "Art",
-    description:
-      " Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-  },
-  {
-    title: "Games",
-    description:
-      " Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+    title: "Game",
+    description: " Take a look at my art portfolio",
   },
 ];

@@ -1,5 +1,6 @@
 // @flow
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -10,14 +11,15 @@ import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  root: {},
+  appBar: {
     flexGrow: 1,
+    flexDirection: "row",
+    justifyContent: "center",
   },
-  appBar: {},
   toolBar: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "center",
   },
   tabsContainer: {
     [theme.breakpoints.down("sm")]: {
@@ -64,6 +66,7 @@ const HeaderMenu = (): React$Element<"div"> => {
           >
             {showMenu ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
+          <Link to="/about" />
           <Tabs
             className={classes.tabsContainer}
             value={value}
@@ -71,9 +74,9 @@ const HeaderMenu = (): React$Element<"div"> => {
             indicatorColor="secondary"
             centered
           >
-            <Tab label="About me" />
+            <Tab label="About me"></Tab>
             <Tab label="Expercience" />
-            <Tab label="Shop" />
+            <Tab label="Shop" disabled />
           </Tabs>
         </Toolbar>
       </AppBar>

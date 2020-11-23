@@ -27,7 +27,7 @@ const SimpleInfo = ({
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Typography
           component="h1"
           variant="h2"
