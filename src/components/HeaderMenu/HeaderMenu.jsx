@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -43,6 +43,10 @@ type Props = {};
 
 const HeaderMenu = ({ ...props }: Props): React$Element<"div"> => {
   const classes = useStyles();
+
+  // TODO: set current active tab based on this
+  const location = useLocation();
+  console.log(location.pathname);
 
   const history = useHistory();
 

@@ -5,8 +5,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import GetAppIcon from "@material-ui/icons/GetApp";
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Button from "@material-ui/core/Button";
+
+import doodle from "../../statics/DoodleColorful.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,9 +32,12 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   image: {
-    width: 450,
-    height: 700,
-    backgroundColor: "grey",
+    width: 400,
+    height: 500,
+    borderRadius: theme.spacing(),
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    backgroundImage: `url(${doodle})`,
     padding: theme.spacing(2),
     [theme.breakpoints.down("sm")]: {
       display: "none",
@@ -67,7 +72,8 @@ const Banner = ({ title, subtitle, ...props }: Props): React$Element<"div"> => {
               color="primary"
               className={classes.button}
             >
-              Download my CV <GetAppIcon className={classes.icon} />
+              Download my CV{" "}
+              <GetAppIcon className={classes.icon} fontSize="small" />
             </Button>
             <Button
               variant="contained"
@@ -78,13 +84,17 @@ const Banner = ({ title, subtitle, ...props }: Props): React$Element<"div"> => {
                 to="/contact"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                Contact me <ArrowForwardIosIcon className={classes.icon} />
+                Contact me{" "}
+                <ArrowForwardIosIcon
+                  className={classes.icon}
+                  fontSize="small"
+                />
               </NavLink>
             </Button>
           </div>
         </div>
 
-        <div className={classes.image}>image placeholder</div>
+        <div className={classes.image} />
       </Container>
     </div>
   );

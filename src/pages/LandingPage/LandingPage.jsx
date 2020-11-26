@@ -34,11 +34,11 @@ const LandingPage = (): React$Element<"div"> => {
   return (
     <div className={classes.root}>
       <Banner />
-      <Fade delay={50}>
-        <CardGrid />
-      </Fade>
       <Fade delay={100}>
         <SimpleInfo {...simpleInfoProps} />
+      </Fade>
+      <Fade delay={50}>
+        <CardGrid />
       </Fade>
       {/* TODO turn this into component  */}
       {map(progressBarsProps, ({ title, value }, index) => (
