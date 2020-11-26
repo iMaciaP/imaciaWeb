@@ -41,7 +41,7 @@ type Props = {};
 
 // TODO: posar un prop que sigui un array de tabs
 
-const HeaderMenu = ({}: Props): React$Element<"div"> => {
+const HeaderMenu = ({ ...props }: Props): React$Element<"div"> => {
   const classes = useStyles();
 
   const history = useHistory();
