@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -37,13 +37,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+type Props = {};
+
 // TODO: posar un prop que sigui un array de tabs
 
-const HeaderMenu = (): React$Element<"div"> => {
+const HeaderMenu = ({}: Props): React$Element<"div"> => {
   const classes = useStyles();
 
+  const history = useHistory();
+
+  // TODO: proper way to do this
+  const handleOnClick = React.useCallback(() => history.push("/about"), [
+    history,
+  ]);
+  const handleOnClick2 = React.useCallback(() => history.push("/"), [history]);
+
   const [showMenu, setShowMenu] = React.useState(false);
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0); //TODO get value of current page
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -66,7 +76,7 @@ const HeaderMenu = (): React$Element<"div"> => {
           >
             {showMenu ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
-          <Link to="/about" />
+
           <Tabs
             className={classes.tabsContainer}
             value={value}
@@ -74,9 +84,8 @@ const HeaderMenu = (): React$Element<"div"> => {
             indicatorColor="secondary"
             centered
           >
-            <Tab label="About me"></Tab>
-            <Tab label="Expercience" />
-            <Tab label="Shop" disabled />
+            <Tab label="Home" onClick={handleOnClick2} />
+            <Tab label="About" onClick={handleOnClick} />
           </Tabs>
         </Toolbar>
       </AppBar>

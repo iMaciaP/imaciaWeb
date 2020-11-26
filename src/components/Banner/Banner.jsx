@@ -4,8 +4,9 @@ import { NavLink } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import GetAppIcon from "@material-ui/icons/GetApp";
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Button from "@material-ui/core/Button";
-// import EarthRender from "../../statics/Earth_cyclesRender.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(),
   },
+  icon: {},
   title: {
     padding: theme.spacing(2),
   },
@@ -65,12 +67,7 @@ const Banner = ({ title, subtitle, ...props }: Props): React$Element<"div"> => {
               color="primary"
               className={classes.button}
             >
-              <NavLink
-                to="/about"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                About
-              </NavLink>
+              Download my CV <GetAppIcon className={classes.icon} />
             </Button>
             <Button
               variant="contained"
@@ -81,7 +78,7 @@ const Banner = ({ title, subtitle, ...props }: Props): React$Element<"div"> => {
                 to="/contact"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                contact
+                Contact me <ArrowForwardIosIcon className={classes.icon} />
               </NavLink>
             </Button>
           </div>
